@@ -3,10 +3,9 @@ from entity.manufacturer import Manufacture
 
 
 class ManufactureTestCase(unittest.TestCase):
-
     def setUp(self) -> None:
         self.manufacture = Manufacture()
-        self.name = 'Lol'
+        self.name = "Lol"
 
     def test_name(self):
         self.manufacture.set_name(self.name)
@@ -22,5 +21,5 @@ class ManufactureTestCase(unittest.TestCase):
         self.assertRaises(TypeError, self.manufacture.set_name, 123)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

@@ -5,19 +5,22 @@ from entity.manufacturer import Manufacture
 
 
 class CategoryTestCase(unittest.TestCase):
-
     def setUp(self) -> None:
-        self.category = Category('Category 1')
+        self.category = Category("Category 1")
 
         self.manufacturer = Manufacture()
-        self.manufacturer.set_name('Manufacturer No1')
+        self.manufacturer.set_name("Manufacturer No1")
 
     def test_add_product(self):
         # must by empty
         self.assertEqual(0, len(self.category.products))
 
-        product1 = Product(sku='a001', name='Product 1', price=10, manufacture=self.manufacturer)
-        product2 = Product(sku='a002', name='Product 2', price=9, manufacture=self.manufacturer)
+        product1 = Product(
+            sku="a001", name="Product 1", price=10, manufacture=self.manufacturer
+        )
+        product2 = Product(
+            sku="a002", name="Product 2", price=9, manufacture=self.manufacturer
+        )
 
         # add product1
         self.category.add_product(product1)
@@ -42,8 +45,12 @@ class CategoryTestCase(unittest.TestCase):
         # must by empty
         self.assertEqual(0, len(self.category.products))
 
-        product1 = Product(sku='a001', name='Product 1', price=10, manufacture=self.manufacturer)
-        product2 = Product(sku='a002', name='Product 2', price=9, manufacture=self.manufacturer)
+        product1 = Product(
+            sku="a001", name="Product 1", price=10, manufacture=self.manufacturer
+        )
+        product2 = Product(
+            sku="a002", name="Product 2", price=9, manufacture=self.manufacturer
+        )
 
         self.category.add_product(product1)
         self.category.add_product(product2)
@@ -57,4 +64,3 @@ class CategoryTestCase(unittest.TestCase):
         # assert that product1 is not affected
         self.assertTrue(self.category.has_product(product1))
         self.assertTrue(product1.has_category(self.category))
-

@@ -1,0 +1,7 @@
+venv/
+.idea/
+__pycache__/
+entity/__pycache__/
+helper/__pycache__/
+service/__pycache__/
+tests/__pycache__/

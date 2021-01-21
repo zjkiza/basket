@@ -5,21 +5,20 @@ from entity.manufacturer import Manufacture
 
 
 class ItemTestCase(unittest.TestCase):
-
     def setUp(self) -> None:
         self.manufacture = Manufacture()
-        self.manufacture_name = 'Lol'
+        self.manufacture_name = "Lol"
         self.manufacture.set_name(self.manufacture_name)
 
-        self.product_name1 = 'Product 1'
-        self.product_sku1 = 'a001'
+        self.product_name1 = "Product 1"
+        self.product_sku1 = "a001"
         self.product_price1 = 5
 
         self.product1 = Product(
             name=self.product_name1,
             sku=self.product_sku1,
             price=self.product_price1,
-            manufacture=self.manufacture
+            manufacture=self.manufacture,
         )
 
         self.quantity = 10
@@ -38,5 +37,5 @@ class ItemTestCase(unittest.TestCase):
         self.assertEqual(15, self.item.quantity)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()
