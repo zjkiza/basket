@@ -4,7 +4,6 @@ from typing import Optional
 
 
 class Basket:
-
     def __init__(self):
         self._items = []
 
@@ -15,7 +14,9 @@ class Basket:
         #     return
         #
         # self._items.append(item)
-        exist_item.add_quantity(item.quantity) if exist_item else self._items.append(item)
+        exist_item.add_quantity(item.quantity) if exist_item else self._items.append(
+            item
+        )
 
     def remove_product(self, product: Product) -> bool:
         exist_item = self.get_item_from_product(product)
@@ -53,5 +54,5 @@ class Basket:
                 item.product.manufacture.get_name(),
                 item.product.name,
                 item.product.price,
-                item.quantity
+                item.quantity,
             )

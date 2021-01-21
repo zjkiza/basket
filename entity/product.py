@@ -2,7 +2,7 @@ from .manufacturer import Manufacture
 
 
 class Product:
-    __slots__ = ('_manufacture', '_price', '_name', '_sku', '_category')
+    __slots__ = ("_manufacture", "_price", "_name", "_sku", "_category")
 
     def __init__(self, sku: str, name: str, price: float, manufacture: Manufacture):
         self._manufacture = manufacture
